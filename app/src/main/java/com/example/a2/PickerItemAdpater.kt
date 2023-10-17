@@ -9,9 +9,9 @@ import com.example.sample.databinding.ItemFooBinding
 
 // RecyclerView.Adapter 를 상속받는 Adapter
 
-class FooAdapter(
+class PickerItemAdpaterAdapter(
     private val onItemClick: (PickerItem) -> Unit
-) : RecyclerView.Adapter<FooAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<PickerItemAdapter.ViewHolder>() {
 
     private val items = mutableListOf<PickerItem>()
 
@@ -31,12 +31,13 @@ class FooAdapter(
 
         Glide.with(holder.itemView.getContext())
             .load(items[position].imageUri)
+
     }
 
     override fun getItemCount(): Int = items.size
 
     inner class ViewHolder(
-        private val binding : ItemFooBinding
+        private val binding : ItemPickerItemBinding
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item : PickerItem) {
