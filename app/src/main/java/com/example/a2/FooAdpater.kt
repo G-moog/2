@@ -3,7 +3,8 @@ package com.example.a2
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.a2.databinding.ItemFooBinding
+import com.example.sample.databinding.ItemFooBinding
+
 
 // RecyclerView.Adapter 를 상속받는 Adapter
 
