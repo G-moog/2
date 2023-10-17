@@ -1,33 +1,25 @@
 package com.example.a2
 
+import android.net.Uri
+
 data class PickerItem(
     val folderName: String,
-    val imageUri: String
+    val imageUri: Uri
 ) {
     // 더미
-/*    companion object {
-        fun createSamples(page : Int) = mutableListOf<PickerItem>().apply {
-            for (i in 1 until 10) {
-                val number = page * 10
-                add(PickerItem(folderName, "이름 ${number + i}", "01000000000"))
+    /*companion object {
+        fun createSamples(page : Int, spinnerValue : String, folderNameList: MutableList<String>, imageUriList: MutableList<Uri>) = mutableListOf<PickerItem>().apply {
+
+            var i = 0
+            while ( i < 10) {
+                if(folderNameList[i] == spinnerValue){
+                    add(PickerItem(folderNameList[i], imageUriList[i]))
+                    i += 1
+                }
+
+
             }
         }
     }*/
 }
 
-/*
-data class PickerItem(
-    val id: Int,
-    val name: String,
-    val phone: String,
-) {
-    // 더미
-    companion object {
-        fun createSamples(page : Int) = mutableListOf<PickerItem>().apply {
-            for (i in 1 until 10) {
-                val number = page * 10
-                add(PickerItem(number +i, "이름 ${number + i}", "01000000000"))
-            }
-        }
-    }
-}*/

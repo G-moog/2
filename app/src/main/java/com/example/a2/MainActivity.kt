@@ -5,6 +5,8 @@ import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
+import android.view.View
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -78,15 +80,24 @@ class MainActivity : AppCompatActivity() {
         // fooAdapter = FooAdapter {}
         binding.recyclerView.adapter = fooAdapter
 
-        /*fooAdapter.addItems(PickerItem.createSamples(0))*/
+        /*fooAdapter.addItems(PickerItem.createSamples(0, "Camera", folderNameList, imageUriList))*/
 
 
-        val spinnerList = listOf("강아지","고양이")
+        val spinnerList = folderNameList.distinct()
 
         binding.spinner.adapter = ArrayAdapter(
             this, // context
             android.R.layout.simple_spinner_item, // 기본
             spinnerList // items
         )
+
+        binding.spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+                val selectedItem = spinnerList[position]
+                Log.d("응애응애", "뱉어내라 목록: $selectedItem")
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {}
+        }
      }
 }
